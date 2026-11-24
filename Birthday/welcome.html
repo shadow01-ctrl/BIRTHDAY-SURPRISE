@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Nancy ✨</title>
+
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+
+    <div class="starfield"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="welcome-container">
+
+        <p class="eyebrow">✦ A LITTLE SURPRISE FOR YOU ✦</p>
+
+        <div class="moon">☾</div>
+
+        <div class="gift-wrapper">
+            <div class="gift">🎁</div>
+            <div class="gift-glow"></div>
+        </div>
+
+        <h1>
+            Hey, <span>Nancy</span>
+        </h1>
+
+        <p class="subtitle">
+            A little magic just waiting for you.
+        </p>
+
+        <p class="description">
+            You make me to feel the  world little brighter.
+            Today, this little surprise is all yours.
+        </p>
+
+        <button id="openGift" class="surprise-btn" type="button">
+            Tap with your cute smile 😊 <span>↗</span>
+        </button>
+
+        <p class="bottom-note">
+            JUST FOR YOU ♡
+        </p>
+
+    </main>
+
+  
+<script>
+    const openGift = document.getElementById("openGift");
+
+    openGift.addEventListener("click", function () {
+
+        openGift.textContent = "Opening your surprise... ❤️";
+
+        openGift.disabled = true;
+
+        setTimeout(function () {
+
+            window.location.href = "./birthday.html";
+
+        }, 1000);
+
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

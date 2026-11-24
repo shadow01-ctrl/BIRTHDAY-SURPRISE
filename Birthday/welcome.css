@@ -1,0 +1,350 @@
+
+/* =================================
+   CINEMATIC BIRTHDAY WELCOME PAGE
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    background: #080817;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+}
+
+/* Starry background */
+
+.starfield {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 30% 70%, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 70% 25%, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 85% 65%, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 45% 40%, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 90% 15%, #ffffff 98%, transparent);
+
+    background-size: 280px 260px;
+    animation: starsMove 35s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-260px);
+    }
+}
+
+/* Ambient glowing lights */
+
+.glow {
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.24;
+    pointer-events: none;
+}
+
+.glow-one {
+    top: -100px;
+    left: -100px;
+    background: #8b5cf6;
+}
+
+.glow-two {
+    right: -100px;
+    bottom: -120px;
+    background: #ec4899;
+}
+
+/* Main content */
+
+.welcome-container {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    width: 100%;
+    padding: 45px 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* Small cinematic heading */
+
+.eyebrow {
+    color: #d6c4ff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+
+    animation: fadeUp 1s ease both;
+}
+
+/* Moon */
+
+.moon {
+    font-size: 32px;
+    color: #fce7a9;
+    margin-bottom: 8px;
+
+    text-shadow: 0 0 25px #fce7a9;
+
+    animation: fadeUp 1.2s ease both;
+}
+
+/* Gift animation */
+
+.gift-wrapper {
+    position: relative;
+    width: 150px;
+    height: 140px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 18px;
+}
+
+.gift {
+    position: relative;
+    z-index: 1;
+
+    font-size: 90px;
+
+    filter: drop-shadow(0 0 24px rgba(236, 72, 153, 0.5));
+
+    animation: giftFloat 3s ease-in-out infinite;
+}
+
+.gift-glow {
+    position: absolute;
+    width: 110px;
+    height: 35px;
+    bottom: 5px;
+
+    background: #c084fc;
+    filter: blur(35px);
+    opacity: 0.7;
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(3deg);
+    }
+}
+
+/* Heading */
+
+h1 {
+    font-size: clamp(40px, 7vw, 68px);
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+    animation: fadeUp 1.4s ease both;
+}
+
+h1 span {
+    color: #f9a8d4;
+    text-shadow: 0 0 35px rgba(249, 168, 212, 0.35);
+}
+
+/* Message */
+
+.subtitle {
+    font-size: clamp(16px, 3vw, 20px);
+    color: #e9ddff;
+    margin-bottom: 15px;
+
+    animation: fadeUp 1.6s ease both;
+}
+
+.description {
+    max-width: 410px;
+    color: #aaa8c6;
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin-bottom: 28px;
+
+    animation: fadeUp 1.8s ease both;
+}
+
+/* Main surprise button */
+
+.surprise-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    min-width: 240px;
+    padding: 16px 24px;
+
+    color: #ffffff;
+    background: linear-gradient(110deg, #8b5cf6, #db4b9b);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 35px rgba(168, 85, 247, 0.24);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    animation: fadeUp 2s ease both;
+}
+
+.surprise-btn span {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 45px rgba(219, 75, 155, 0.4);
+}
+
+.surprise-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+.surprise-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Footer */
+
+.bottom-note {
+    margin-top: 38px;
+    color: #77738f;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* Entry animations */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive */
+
+@media (max-width: 480px) {
+    .welcome-container {
+        padding: 35px 22px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .gift-wrapper {
+        width: 125px;
+        height: 120px;
+    }
+
+    .gift {
+        font-size: 76px;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    .description {
+        max-width: 320px;
+        font-size: 13px;
+    }
+
+    .surprise-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .bottom-note {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .main-button {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: clamp(28px, 8vw, 42px);
+    }
+
+    p {
+        line-height: 1.7;
+    }
+}
